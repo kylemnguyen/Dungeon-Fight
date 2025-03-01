@@ -7,17 +7,24 @@
 
     <body>
         <div class="main">
-            <button id="begin">BEGIN!</button>
+
+            <button onclick="start()"id="begin">BEGIN!</button>
+
+            <!-- enemy -->
             <div class="enemy">
                 <!-- Boss img -->
                 <h2>Boss</h2>
+
                 <div class="boss-stats">
-                    <h3 id="boss-heatlh"></h3>
+
+                    <h3 id="boss-health" >HP: </h3>
+
                 </div>
             </div>
 
             <hr>
 
+            <!-- player -->
             <div class="player">
                 <!-- Player img -->
                 <div class="player-stats">
@@ -29,8 +36,10 @@
                     </div>
                 </div>
                 <div class="player-actions">
-                    <button id="attack">Attack</button>
-                    <button id="items">Items</button>
+                    <button onclick="playerAttack(false)" id="attack">Attack</button>
+                    <button id="special-attack">Special Attack</button>
+                    <button id="heal">Heal (+25HP)</button>
+                    <button id="debuff">debuff (-25% defense)</button>
                     <button id="quit">Give Up!</button>
                 </div>
             </div>
