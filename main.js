@@ -21,6 +21,13 @@ var boss = {
     dmg: 0
 };
 
+// Stat updating for both player and boss
+function updateStats() {
+    playerHp.innerHTML = "HP: " + player.health;
+    playerMana.innerHTML = "MP: " + player.mana;
+    bossHp.innerHTML = "HP: " + boss.health;
+}
+
 // initalize player and boss stats
 function init() {
 
@@ -42,6 +49,18 @@ function init() {
 
 }
 
+function crit(amt) {
+
+    var rand = Math.random();
+    if(rand >= 0.75) {
+        return amt * 1.5;
+    }
+    
+    return amt;
+
+}
+
+// Boss actions #########
 function bossTurn() {
     if (player.turn === false) {
 
@@ -56,16 +75,30 @@ function bossTurn() {
     }
 }
 
-function crit(amt) {
+// #############
 
-    var rand = Math.random();
-    if(rand >= 0.75) {
-        return amt * 1.5;
+// PLAYER actions
+function playerAttack() {
+    if(player.turn === true) {
+        player.attacking = true;
+        attack("enemy", false);
+        player.turn = false;
     }
-    return amt;
+}
+
+function playerHeal() {
 
 }
 
+function playerBuff() {
+    
+}
+
+function playerDebuff() {
+    
+}
+
+// ########
 function attack(obj, special) {
 
     // enemy attack
@@ -100,19 +133,7 @@ function attack(obj, special) {
 
 }
 
-function playerAttack() {
-    if(player.turn === true) {
-        player.attacking = true;
-        attack("enemy", false);
-        player.turn = false;
-    }
-}
 
-function updateStats() {
-    playerHp.innerHTML = "HP: " + player.health;
-    playerMana.innerHTML = "MP: " + player.mana;
-    bossHp.innerHTML = "HP: " + boss.health;
-}
 
 function start() {
     init();
