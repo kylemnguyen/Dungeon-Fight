@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Dungeon fight!</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </header>
+
+    <body>
+        <div class="main">
+            <button id="begin">BEGIN!</button>
+            <div class="enemy">
+                <!-- Boss img -->
+                <h2>Boss</h2>
+                <div class="boss-stats">
+                    <h3 id="boss-heatlh"></h3>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="player">
+                <!-- Player img -->
+                <div class="player-stats">
+                    <div class="health">
+                        <h3 id="player-health">HP: </h3>
+                    </div>
+                    <div class="mana">
+                        <h3 id="player-mana">MP: </h3>
+                    </div>
+                </div>
+                <div class="player-actions">
+                    <button id="attack">Attack</button>
+                    <button id="items">Items</button>
+                    <button id="quit">Give Up!</button>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
